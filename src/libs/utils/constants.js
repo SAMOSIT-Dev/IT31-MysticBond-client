@@ -1,0 +1,1 @@
+export const houses = ["Phoenix", "Griffin", "Qilin", "Basilisk", "Leviathan", "Kitsune"]
