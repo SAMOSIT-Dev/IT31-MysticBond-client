@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Edensor";
+  src: url("./assets/fonts/Edensor-FREE.otf") format("woff2");
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("./assets/fonts/InriaSerif-Regular.ttf") format("woff2"),
+    url("./assets/fonts/InriaSerif-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "LINE Seed Sans";
+  src: url("./assets/fonts/LINESeedSansTH_W_Rg.woff2") format("woff2"),
+    url("./assets/fonts/LINESeedSansTH_W_Bd.woff2") format("woff2"),
+    url("./assets/fonts/LINESeedSansTH_W_Th.woff2") format("woff2");
+}
+
+@theme inline {
+  --default-font-family: "LINE Seed Sans";
+  --font-edensor: "Edensor", sans-serif;
+  --font-inria-serif: "Inria Serif", sans-serif;
+  --font-line-seed-sans: "LINE Seed Sans", sans-serif;
+}
