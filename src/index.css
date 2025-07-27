@@ -24,3 +24,20 @@
   --font-inria-serif: "Inria Serif", sans-serif;
   --font-line-seed-sans: "LINE Seed Sans", sans-serif;
 }
+
+@utility signin-bg {
+  background: radial-gradient(
+    65.86% 32.18% at 50.07% 1.89%,
+    #252531 0%,
+    #1c1c23 50%,
+    #131315 100%
+  );
+}
+
+@layer base {
+  img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+  }
+}
