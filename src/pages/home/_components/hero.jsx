@@ -1,9 +1,9 @@
 import logo from '../../../assets/images/the_code_of_mystic_bonds_logo.png';
 import hero_bg from '../../../assets/images/hero_bg.jpg'
 
-export default function hero() {
+export default function Hero() {
   return (
-    <section className="max-sm:justify-end flex flex-col items-center justify-center w-full min-h-[768px] h-max relative ">
+    <section className="max-sm:justify-end flex flex-col items-center justify-center w-full min-h-[768px] h-screen relative ">
       <div className='absolute flex flex-col w-full min-h-max h-full'>
         <img src={hero_bg} alt="hero background" className='z-0 lg:w-full lg:h-full absolute w-full h-3/4 object-cover object-center' />
         <span className='lg:h-[4/5] lg:opacity-50 absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-transparent via-black to-black' />
