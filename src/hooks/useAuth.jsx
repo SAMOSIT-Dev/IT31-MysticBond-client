@@ -6,7 +6,7 @@ const AuthContext = createContext({
   isAuthenticated: false,
   pending: true,
   user: null,
-  login: async () => {},
+  login: async (studentId, password) => {},
   logout: () => {},
 });
 
@@ -15,7 +15,7 @@ export const useAuth = () => {
   if (!context) {
     throw new Error("useAuth must be used within AuthProvider");
   }
-  return context
+  return context;
 };
 
 export default function AuthProvider({ children }) {
