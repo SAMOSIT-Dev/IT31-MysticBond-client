@@ -26,7 +26,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="grid grid-cols-2 h-full text-white gap-4">
+    <div className="grid grid-cols-2 h-screen text-white gap-4">
       <div className="h-full rounded-2xl overflow-hidden relative max-lg:hidden">
         <div className="w-full h-full absolute inset-0 bg-[#6600C014]"></div>
         <div
@@ -90,7 +90,7 @@ export default function LoginPage() {
             </Button>
           </form>
         </div>
-        <img className="h-12 mt-auto mb-0 w-max mx-auto" src={CI_BANNER} />
+        <img className="w-60 mt-auto mb-0 mx-auto" src={CI_BANNER} />
       </div>
     </div>
   );
