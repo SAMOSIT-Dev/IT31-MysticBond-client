@@ -35,6 +35,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   img {
     user-select: none;
     -moz-user-select: none;
