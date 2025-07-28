@@ -2,7 +2,7 @@ import Input from "../../../components/ui/Input";
 import { cn, getFormDataValues } from "../../../libs/utils/utils";
 
 import CI_BANNER from "../../../assets/images/KMUTT+SIT.png";
-import SIGN_BG from "../../../assets/images/hero_bg.jpg";
+import SIGN_BG from "../../../assets/images/hero_bg.webp";
 import KMUTT_LOGO from "../../../assets/images/KMUTT_CI_Semi_Logo_normal-full.png";
 import MYSTIC_BOND_LOGO from "../../../assets/images/mysticbond_logo.png";
 
