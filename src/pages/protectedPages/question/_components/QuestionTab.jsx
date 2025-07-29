@@ -5,9 +5,10 @@ import {
   getPersonalityPercentage,
   mapChoiceToColor,
   personalityQuestions,
-} from "../../../../libs/utils/personalityCalculation";
+} from "../../../../libs/utils/personality";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "../../../../components/ui/Button";
+import { Profile } from "../../../../libs/api/profile.api";
 
 function QuestionContent({
   index = 0,
@@ -37,7 +38,9 @@ function QuestionContent({
   return (
     <div className="max-w-200 mx-auto">
       <p>คำถามที่ {index + 1}</p>
-      <p className="text-white text-2xl md:text-4xl leading-normal md:leading-12 mt-4 font-bold">{title}</p>
+      <p className="text-white text-2xl md:text-4xl leading-normal md:leading-12 mt-4 font-bold">
+        {title}
+      </p>
       <div className="space-y-4 mt-9 md:mt-14">
         {choices.map((choice) => (
           <button
@@ -84,6 +87,8 @@ function QuestionContent({
 }
 
 export default function QuestionTab() {
+  const { mutate: updateData } = Profile.updateProfile();
+
   const [index, setIndex] = useState(0);
   const { setValue, updateStepItemState } = useStep();
 
@@ -138,7 +143,7 @@ export default function QuestionTab() {
     setValue("result");
     updateStepItemState("question", { activated: true });
 
-    console.log(percentage);
+    updateData({ data: percentage, isAnswered: true });
   };
 
   return (
@@ -163,7 +168,7 @@ export default function QuestionTab() {
               )}
               onClick={previous}
             >
-              <ChevronLeft size={50} className="right-px relative"/>
+              <ChevronLeft size={50} className="right-px relative" />
             </button>
             <button
               disabled={index === personalityQuestions.length - 1}

@@ -1,6 +1,8 @@
 export const endpoint = {
-    baseUrl: import.meta.env.BASE_URL || "http://localhost:3000",
+    baseUrl: import.meta.env.VITE_BASE_URL || "http://localhost:3000",
     api: {
-        login: "/service/api/samosit/login"
+        login: "/samosit/it31-mysticbond/auth/login",
+        userProfile: "/samosit/it31-mysticbond/users",
+        refreshToken: "/samosit/it31-mysticbond/auth/refresh"
     }
 }

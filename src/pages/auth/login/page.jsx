@@ -9,12 +9,16 @@ import MYSTIC_BOND_LOGO from "../../../assets/images/mysticbond_logo.png";
 import Button from "../../../components/ui/Button";
 import { useAuth } from "../../../hooks/useAuth";
 import { X } from "lucide-react";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import Checkbox from "../../../components/ui/Checkbox";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
+
+  if (isAuthenticated) {
+    return <Navigate to="/question" replace />;
+  }
 
   const handleSubmit = (formData) => {
     const {
@@ -22,7 +26,12 @@ export default function LoginPage() {
       password = "",
       agreeTerm,
     } = getFormDataValues(formData);
-    console.log({ studentId, password, agreeTerm });
+
+    try {
+      login(studentId, password);
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -52,7 +61,7 @@ export default function LoginPage() {
         <div className="my-auto text-center">
           {/* <h1 className="text-5xl font-inria-serif">Sign In</h1> */}
           <div className="flex justify-center h-26.25">
-            <img src={MYSTIC_BOND_LOGO}  alt="logo" />
+            <img src={MYSTIC_BOND_LOGO} alt="logo" />
           </div>
           <form action={handleSubmit} className="mt-10 flex flex-col">
             <div className="space-y-4">
