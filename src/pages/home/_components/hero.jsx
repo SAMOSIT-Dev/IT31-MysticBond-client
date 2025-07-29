@@ -1,9 +1,13 @@
 import logo from '../../../assets/images/the_code_of_mystic_bonds_logo.svg';
 import hero_bg from '../../../assets/images/hero_bg.webp'
 
+import { useNavigate } from "react-router";
+
 export default function Hero() {
+  const navigate = useNavigate();
+  
   return (
-    <section className="max-sm:justify-end flex flex-col items-center justify-center w-full min-h-[768px] h-screen relative ">
+    <section className="justify-end flex flex-col items-center lg:justify-center w-full min-h-[768px] h-screen relative ">
 
       {/* Background Decoration */}
         <div className='absolute flex flex-col w-full h-full'>
@@ -19,13 +23,16 @@ export default function Hero() {
             alt="The Code of Mystic Bonds Logo" 
             className='w-full'
           />
-          <button className='max-sm:hidden cursor-pointer lg:-mt-5 lg:text-2xl lg:px-20 lg:py-4 px-8 py-2 text-white text-md border-2 border-[#F4F4F440] shadow-[0_0_1rem] shadow-[#f4f4f449] bg-[radial-gradient(circle_at_top,_#000000,_#000000,_#262626,_#4F4F4F)] rounded-[44px] duration-300 hover:shadow-[0_0_1.5rem] hover:shadow-[#f4f4f480]'>
+          <button
+            className='lg:block hidden cursor-pointer lg:-mt-5 lg:text-2xl lg:px-20 lg:py-4 px-8 py-2 text-white text-md border-2 border-[#F4F4F440] shadow-[0_0_1rem] shadow-[#f4f4f449] bg-[radial-gradient(circle_at_top,_#000000,_#000000,_#262626,_#4F4F4F)] rounded-[44px] duration-300 hover:shadow-[0_0_1.5rem] hover:shadow-[#f4f4f480]'
+            onClick={() => navigate("/auth/login")}
+          >
             เข้าสู่ระบบ
           </button>
         </div>
         
-        {/* Sponsors */}
-      <div className='max-sm:relative max-sm:bottom-auto max-sm:mb-[3rem] text-[#AAA] flex flex-col w-full absolute bottom-[3rem]'>
+      {/* Sponsors */}
+      <div className='relative mb-[8rem] lg:mb-0 lg:bottom-[3rem] text-[#AAA] flex flex-col w-full lg:absolute'>
         <p className='lg:text-xl text-md text-center mb-5' style={{fontFamily: 'Inria Serif, serif' }}>Sponsored by</p>
         <ul className='lg:text-2xl text-xl flex items-center justify-center flex-row relative'>
           <li className='w-[200px] text-center'>Sponsor</li>
