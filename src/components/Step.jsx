@@ -1,6 +1,6 @@
 import { Tabs } from "radix-ui";
 import { cn } from "../libs/utils/utils";
-import { createContext, use, useCallback, useMemo, useState } from "react";
+import { createContext, use, useCallback, useEffect, useMemo, useState } from "react";
 
 const StepContext = createContext();
 
@@ -19,6 +19,14 @@ export function StepProvider({
 }) {
   const [value, setValue] = useState(defaultValue);
   const [stepItems, setStepItems] = useState(defaultValueOfStepItems);
+
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
+
+  useEffect(() => {
+    setStepItems(defaultValueOfStepItems);
+  }, [defaultValueOfStepItems]);
 
   const updateStepItemState = useCallback((key, value) => {
     setStepItems((prev) =>
@@ -83,7 +91,7 @@ export function StepIndicator() {
                 "flex items-center justify-center p-4 px-10 font-normal bg-[#B7B7B770] rounded-full text-white col-span-1",
                 "data-[state='active']:bg-white data-[state='active']:font-black data-[state='active']:text-black group",
                 "backdrop-blur-[19.200000762939453px]",
-                item.activated && "bg-[#7200FD70] text-white",
+                item.activated && "bg-[#7200FD70] data-[state='active']:text-white data-[state='active']:bg-[#7200FD]",
                 "max-md:h-14 max-md:data-[state='inactive']:size-14 max-md:data-[state='inactive']:p-4"
               )}
               value={item.key}
@@ -91,7 +99,11 @@ export function StepIndicator() {
               <span className="max-md:hidden group-data-[state='active']:block">
                 {item.label}
               </span>
-              {item?.icon && <i className="flex md:hidden group-data-[state='active']:hidden text-white">{item.icon}</i>}
+              {item?.icon && (
+                <i className="flex md:hidden group-data-[state='active']:hidden text-white">
+                  {item.icon}
+                </i>
+              )}
             </Tabs.Trigger>
             {i < stepItems.length - 1 && (
               <div
