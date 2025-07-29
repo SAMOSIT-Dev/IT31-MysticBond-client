@@ -35,7 +35,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="grid grid-cols-2 h-screen text-white gap-4">
+    <div className="grid grid-cols-2 h-full min-h-0 overflow-y-auto text-white gap-4">
       <div className="h-full rounded-2xl overflow-hidden relative max-lg:hidden">
         <div className="w-full h-full absolute inset-0 bg-[#6600C014]"></div>
         <div
