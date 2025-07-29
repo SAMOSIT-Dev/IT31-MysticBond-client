@@ -1,11 +1,7 @@
 import BG from "../../../assets/images/quiz_bg.png";
 import BOOK_PROP from "../../../assets/images/Prop2_3x.webp";
 
-import {
-  Step,
-  StepIndicator,
-  StepProvider,
-} from "../../../components/Step";
+import { Step, StepIndicator, StepProvider } from "../../../components/Step";
 import StartTab from "./_components/StartTab";
 import QuestionTab from "./_components/QuestionTab";
 import ResultTab from "./_components/ResultTab";
@@ -13,6 +9,7 @@ import { ClipboardList, Send, ShieldAlert, Sparkles } from "lucide-react";
 import { Profile } from "../../../libs/api/profile.api";
 import { useMemo } from "react";
 import { useLoaderData } from "react-router";
+import NavBar from "../../../components/NavBar";
 
 export default function QuestionPage() {
   const { data: initalData } = useLoaderData();
@@ -40,6 +37,9 @@ export default function QuestionPage() {
       }}
     >
       <div className="fixed w-screen h-full inset-0 bg-black/50"></div>
+      <div className="relative h-18.25 mb-14">
+        <NavBar />
+      </div>
       <div className="m-auto max-w-300 h-max w-full p-5 py-15 max-md:p-7 flex flex-col text-white border-white/10 glass-card">
         {isLoading ? (
           <div className="flex flex-col justify-center mx-auto max-w-100 animate-pulse">
