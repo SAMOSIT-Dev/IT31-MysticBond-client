@@ -3,15 +3,15 @@ import { queryClient } from "../libs/queryClient";
 import AuthProvider from "../hooks/useAuth";
 import { RouterProvider } from "react-router";
 import { router } from "../libs/router";
+import { Toaster } from "sonner";
 
 export default function Providers({ children }) {
   return (
-    <RouterProvider router={router}>
+    <QueryClientProvider client={queryClient}>
+      <Toaster />
       <AuthProvider>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <RouterProvider router={router}>{children}</RouterProvider>
       </AuthProvider>
-    </RouterProvider>
+    </QueryClientProvider>
   );
 }
