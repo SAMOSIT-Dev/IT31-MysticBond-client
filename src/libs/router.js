@@ -20,15 +20,16 @@ export const router = createBrowserRouter([
         Component: RootLayout,
         children: [
             { index: true, Component: HomePage },
+
+        ]
+    },
+    {
+        path: "/auth",
+        Component: AuthLayout,
+        children: [
             {
-                path: "auth",
-                Component: AuthLayout,
-                children: [
-                    {
-                        path: "login",
-                        Component: LoginPage
-                    }
-                ]
+                path: "login",
+                Component: LoginPage
             }
         ]
     },
