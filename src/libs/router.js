@@ -1,6 +1,5 @@
 import { createBrowserRouter, redirect } from "react-router";
 
-import HomePage from "../pages/home/page";
 import RootLayout from "../pages/layout";
 import AuthLayout from "../pages/auth/layout";
 import LoginPage from "../pages/auth/login/page";
@@ -10,17 +9,23 @@ import QuestionPage from "../pages/protectedPages/question/page";
 import { request } from "./request";
 import { getSession } from "../hooks/useAuth";
 import { endpoint } from "./utils/endpoints";
-import Cookies from "js-cookie";
-import { toast } from "sonner";
 import ErrorPage from "../pages/error/page";
+import HydrateFallbackScreen from "../components/HydrateFallBackScreen";
+import { initialDataLoader } from "./preload";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         Component: RootLayout,
+        ErrorBoundary: ErrorPage,
+        // HydrateFallback: null,
         children: [
-            { index: true, Component: HomePage },
-
+            {
+                index: true, lazy: {
+                    // shouldRevalidate: true,
+                    Component: async () => (await import("../pages/home/page")).default
+                }
+            },
         ]
     },
     {
@@ -29,7 +34,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "login",
-                Component: LoginPage
+                Component: LoginPage,
             }
         ]
     },
@@ -37,25 +42,19 @@ export const router = createBrowserRouter([
         path: "/",
         Component: ProtectedPageLayout,
         ErrorBoundary: ErrorPage,
+        HydrateFallback: null,
         children: [
             {
                 path: "question",
                 Component: QuestionPage,
-                loader: async () => {
-                    const token = getSession()
-
-                    if (!token) {
-                        return redirect("/auth/login")
-                    }
-
-                    const data = await request.get(endpoint.api.userProfile, { headers: { Authorization: `Bearer ${token.ACCESS_TOKEN}` } })
-
-                    if (data?.status && data.status !== 200) {
-                        return redirect("/auth/login")
-                    }
-
-                    return { data }
-                }
+                loader: () => initialDataLoader(endpoint.api.userProfile)
+            },
+            {
+                path: "hint",
+                lazy: {
+                    Component: async () => (await import("../pages/protectedPages/hint/page")).default,
+                },
+                loader: () => initialDataLoader(endpoint.api.getHints)
             }
         ]
     },
