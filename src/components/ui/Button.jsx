@@ -14,7 +14,7 @@ export default function Button({
     primary:
       "bg-[#6600C0] border border-[#C08CFF] font-bold text-lg shadow-[0px_4px_61px_5px_#3D166D] disabled:bg-[#494949] disabled:border-[#9B9B9B] disabled:text-[#A8A8A8] disabled:shadow-none",
     secondary: "",
-    white: "",
+    white: "bg-white text-black font-bold text-lg",
   };
 
   return (
