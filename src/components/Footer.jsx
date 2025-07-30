@@ -29,7 +29,7 @@ export default function Footer() {
           </a>
         </div>
         <div className='border-t border-[#B3B3B3] lg:-order-1 lg:mb-8.5'></div>
-        <div className='py-6 text-white font-line-seed-sans flex justify-center gap-6 sm:gap-8 lg:justify-start lg:absolute lg:mt-3 xl:mt-7'>
+        <div className='py-6 text-white font-line-seed-sans flex justify-center gap-4 sm:gap-8 lg:justify-start lg:absolute lg:mt-3 xl:mt-7'>
           <img className='w-12 xl:hidden' src={SITLogo} alt="" />
           <div className='xl:hidden'>
             <p className='text-[16px] font-bold'>School of Information Technology</p>
