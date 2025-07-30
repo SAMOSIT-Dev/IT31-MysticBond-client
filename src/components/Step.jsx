@@ -47,6 +47,16 @@ export function StepProvider({
     return index;
   }, [stepItems, value]);
 
+  useEffect(() => {
+    setStepItems((prev) =>
+      prev.map((item, i) =>
+        getStepIndex > i
+          ? { ...item, activated: true }
+          : { ...item }
+      )
+    );
+  }, [getStepIndex]);
+
   const context = {
     value,
     setValue,
