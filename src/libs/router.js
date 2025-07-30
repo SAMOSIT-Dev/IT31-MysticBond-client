@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from "react-router";
+import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../pages/layout";
 import AuthLayout from "../pages/auth/layout";
@@ -6,11 +6,8 @@ import LoginPage from "../pages/auth/login/page";
 import NotFound from "../pages/not-found/page";
 import ProtectedPageLayout from "../pages/protectedPages/layout";
 import QuestionPage from "../pages/protectedPages/question/page";
-import { request } from "./request";
-import { getSession } from "../hooks/useAuth";
 import { endpoint } from "./utils/endpoints";
 import ErrorPage from "../pages/error/page";
-import HydrateFallbackScreen from "../components/HydrateFallBackScreen";
 import { initialDataLoader } from "./preload";
 
 export const router = createBrowserRouter([
