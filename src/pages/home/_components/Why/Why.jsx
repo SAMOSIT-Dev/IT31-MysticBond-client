@@ -25,8 +25,10 @@ export default function Why() {
                 </div>
                 <p className='text-3xl'>01</p>
               </div>
-              <h3 className="text-4xl mb-3">เหตุผล</h3>
-              <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              <div className='font-line-seed-sans'>
+                <h3 className="text-4xl mb-3">เหตุผล</h3>
+                <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              </div>
             </ReasonCard>
             <ReasonCard>
               <div className='flex justify-between'>
@@ -35,8 +37,10 @@ export default function Why() {
                 </div>
                 <p className='text-3xl'>02</p>
               </div>
-              <h3 className="text-4xl mb-3">เหตุผล</h3>
-              <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              <div className='font-line-seed-sans'>
+                <h3 className="text-4xl mb-3">เหตุผล</h3>
+                <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              </div>
             </ReasonCard>
             <ReasonCard>
               <div className='flex justify-between'>
@@ -45,8 +49,10 @@ export default function Why() {
                 </div>
                 <p className='text-3xl'>03</p>
               </div>
-              <h3 className="text-4xl mb-3">เหตุผล</h3>
-              <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              <div className='font-line-seed-sans'>
+                <h3 className="text-4xl mb-3">เหตุผล</h3>
+                <p className="text-sm font-normal">โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน</p>
+              </div>
             </ReasonCard>
           </div>
         </div>
