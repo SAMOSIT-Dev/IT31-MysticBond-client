@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import shield from "../../../assets/images/house_shield.png";
 import Basilisk from "../../../assets/images/Basilisk.png";
 import Giffin from "../../../assets/images/Giffin.png";
@@ -8,11 +8,11 @@ import Leviathan from "../../../assets/images/Leviathan.png";
 import Phoenix from "../../../assets/images/Phoenix.png";
 import Qilin from "../../../assets/images/Qilin.png";
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
 const houses = [
   { name: "Phoenix", shield_src: shield, mascot_src: Phoenix },
@@ -37,11 +37,12 @@ export default function House() {
 
       {/* Header */}
       <div className="text-white text-center relative z-10 flex flex-col items-center mb-8 px-20 ">
-        <h1 className="font-serif font-bold text-6xl  xl:text-7xl mb-4 tracking-wider">
+        <h1 className="font-inria-serif font-bold text-6xl  xl:text-7xl mb-4 tracking-wider">
           Houses
         </h1>
         <p className="text-base lg:text-xl xl:text-2xl font-light  leading-relaxed px-4">
-          โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน
+          สัมผัสกับพลังแห่งเวทมนตร์ที่ซ่อนอยู่ในตัวเรา ที่รอให้น้อง ๆ ค้นพบตัวตน
+          และบทบาทที่แท้จริงในโลกใบใหม่นี้ ผ่านพลังของสัตว์ในตำนานทั้ง 6 ตน
         </p>
       </div>
 
@@ -51,11 +52,25 @@ export default function House() {
           {houses.map((house, index) => (
             <div className="p-4 md:p-2 relative flex flex-col justify-center items-center">
               <div className="w-full flex justify-center items-center relative">
-                <img className="absolute z-0 w-30 h-30 lg:h-40 lg:w-40 object-contain opacity-80" src={house.shield_src} alt="shield" />
-                <img className={`relative z-10 ${house.name === "Qilin" ? "md:max-w-[110px] md:h-40 h-50 xl:h-60 xl:max-w-[200px] object-contain scale-130" : " md:max-w-[110px] lg:max-w-[200px] object-contain xl:max-w-[300px]"} 
-                  hover:rotate-15 transition-all duration-300 md:h-40 h-50 xl:h-60`} src={house.mascot_src} alt={house.name} />
+                <img
+                  className="absolute z-0 w-30 h-30 lg:h-40 lg:w-40 object-contain opacity-80"
+                  src={house.shield_src}
+                  alt="shield"
+                />
+                <img
+                  className={`relative z-10 ${
+                    house.name === "Qilin"
+                      ? "md:max-w-[110px] md:h-40 h-50 xl:h-60 xl:max-w-[200px] object-contain scale-130"
+                      : " md:max-w-[110px] lg:max-w-[200px] object-contain xl:max-w-[300px]"
+                  } 
+                  hover:rotate-15 transition-all duration-300 md:h-40 h-50 xl:h-60`}
+                  src={house.mascot_src}
+                  alt={house.name}
+                />
               </div>
-              <h3 className="text-2xl mt-4 text-center font-inria-serif text-white">{house.name}</h3>
+              <h3 className="text-2xl mt-4 text-center font-inria-serif text-white">
+                {house.name}
+              </h3>
             </div>
           ))}
         </div>
@@ -65,11 +80,11 @@ export default function House() {
       <div className="md:hidden flex items-center justify-center relative z-10 pt-20">
         <div className="w-full max-w-7xl mx-auto px-4">
           <Swiper
-            effect={'coverflow'}
+            effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
             loop={true}
-            slidesPerView={'auto'}
+            slidesPerView={"auto"}
             initialSlide={1}
             coverflowEffect={{
               rotate: 0,
@@ -84,16 +99,22 @@ export default function House() {
             ref={swiperRef}
           >
             {houses.map((house, index) => (
-              <SwiperSlide 
-                key={index} 
+              <SwiperSlide
+                key={index}
                 className="!w-72 !h-80 flex items-center justify-center"
               >
-                <div className={`
+                <div
+                  className={`
                   flex flex-col items-center justify-center w-full h-full 
                   transition-all duration-500 ease-out 
-                  ${activeIndex === index ? 'scale-110 opacity-100' : 'scale-90 opacity-60'}
+                  ${
+                    activeIndex === index
+                      ? "scale-110 opacity-100"
+                      : "scale-90 opacity-60"
+                  }
                   hover:scale-105
-                `}>
+                `}
+                >
                   {/* House Card Container */}
                   <div className="relative w-100 lg:w-52 h-56 lg:h-60 flex items-center justify-center">
                     {/* Mascot - Main Image (Large) */}
@@ -104,7 +125,7 @@ export default function House() {
                         className="w-full h-full object-contain "
                       />
                     </div>
-                    
+
                     {/* Shield Background (Smaller, behind mascot) */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] lg:w-32 h-[80%] lg:h-32 flex items-center justify-center z-10 opacity-80">
                       <img
@@ -114,16 +135,15 @@ export default function House() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* House Name */}
-                  <h3 className={`
+                  <h3
+                    className={`
                     text-2xl mt-4 text-center font-inria-serif font-normal
                     transition-all duration-300
-                    ${activeIndex === index 
-                      ? 'text-white' 
-                      : 'text-white/80'
-                    }
-                  `}>
+                    ${activeIndex === index ? "text-white" : "text-white/80"}
+                  `}
+                  >
                     {house.name}
                   </h3>
                 </div>
@@ -138,9 +158,10 @@ export default function House() {
                 key={index}
                 className={`
                   w-3 h-3 rounded-full transition-all duration-300 
-                  ${activeIndex === index 
-                    ? 'bg-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.7)]' 
-                    : 'bg-white/30 hover:bg-white/50 hover:scale-110'
+                  ${
+                    activeIndex === index
+                      ? "bg-white scale-125 shadow-[0_0_15px_rgba(255,255,255,0.7)]"
+                      : "bg-white/30 hover:bg-white/50 hover:scale-110"
                   }
                 `}
                 onClick={() => {
