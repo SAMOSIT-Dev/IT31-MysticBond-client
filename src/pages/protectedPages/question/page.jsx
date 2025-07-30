@@ -30,6 +30,33 @@ export default function QuestionPage() {
   const hasHouseData = !!getHouseData?.title;
   const isAnswered = !!data?.data?.data?.user?.isAnswered;
 
+  const defaultStepValues = useMemo(
+    () => [
+      {
+        key: "start",
+        label: "เริ่มต้น",
+        disabled: true,
+        activated: false,
+        icon: <Sparkles />,
+      },
+      {
+        key: "question",
+        label: "แบบทดสอบ",
+        disabled: true,
+        activated: false,
+        icon: <ClipboardList />,
+      },
+      {
+        key: "result",
+        label: "สรุปผล",
+        disabled: true,
+        activated: isAnswered && hasHouseData,
+        icon: <Send className="relative right-px" />,
+      },
+    ],
+    []
+  );
+
   return (
     <AnimatedLayout>
       <div
@@ -57,29 +84,7 @@ export default function QuestionPage() {
           ) : (
             <StepProvider
               defaultValue={isAnswered ? "result" : "start"}
-              defaultValueOfStepItems={[
-                {
-                  key: "start",
-                  label: "เริ่มต้น",
-                  disabled: true,
-                  activated: isAnswered,
-                  icon: <Sparkles />,
-                },
-                {
-                  key: "question",
-                  label: "แบบทดสอบ",
-                  disabled: true,
-                  activated: isAnswered,
-                  icon: <ClipboardList />,
-                },
-                {
-                  key: "result",
-                  label: "สรุปผล",
-                  disabled: true,
-                  activated: isAnswered && hasHouseData,
-                  icon: <Send className="relative right-px" />,
-                },
-              ]}
+              defaultValueOfStepItems={defaultStepValues}
             >
               <Step className="flex flex-col" activationMode="manual">
                 <div className="mx-auto">
