@@ -1,9 +1,10 @@
 import Hero from "./_components/hero";
 import About from "./_components/about";
+import AnimatedLayout from "../../components/AnimatedLayout";
 
 export default function HomePage() {
   return (
-    <div>
+    <AnimatedLayout>
       <section id="hero">
         <Hero />
       </section>
@@ -25,7 +26,6 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold mb-8">คำถามที่พบบ่อย</h2>
         </div>
       </section>
-
-    </div>
+    </AnimatedLayout>
   );
 }

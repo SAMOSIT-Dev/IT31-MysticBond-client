@@ -1,6 +1,14 @@
 import { Tabs } from "radix-ui";
 import { cn } from "../libs/utils/utils";
-import { createContext, use, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import AnimatedLayout from "./AnimatedLayout";
 
 const StepContext = createContext();
 
@@ -91,8 +99,9 @@ export function StepIndicator() {
                 "flex items-center justify-center p-4 px-10 font-normal bg-[#B7B7B770] rounded-full text-white col-span-1",
                 "data-[state='active']:bg-white data-[state='active']:font-black data-[state='active']:text-black group",
                 "backdrop-blur-[19.200000762939453px]",
-                item.activated && "bg-[#7200FD70] data-[state='active']:text-white data-[state='active']:bg-[#7200FD]",
-                "max-md:h-14 max-md:data-[state='inactive']:size-14 max-md:data-[state='inactive']:p-4"
+                item.activated &&
+                  "bg-[#7200FD70] data-[state='active']:text-white data-[state='active']:bg-[#7200FD]",
+                "max-md:h-14 max-md:p-4 max-md:px-6 max-md:data-[state='inactive']:size-14 max-md:data-[state='inactive']:p-4"
               )}
               value={item.key}
             >
@@ -137,5 +146,10 @@ export function StepIndicator() {
  * @returns
  */
 export function StepTabContent({ ...props }) {
-  return <Tabs.Content className="outline-none" {...props} />;
+  const { value } = useStep();
+  return (
+    <AnimatedLayout key={value}>
+      <Tabs.Content className="outline-none" {...props} />
+    </AnimatedLayout>
+  );
 }

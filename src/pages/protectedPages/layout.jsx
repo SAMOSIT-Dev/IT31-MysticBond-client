@@ -1,9 +1,12 @@
-import { Navigate, Outlet } from "react-router";
+import { Navigate, Outlet, useLocation } from "react-router";
 import { useAuth } from "../../hooks/useAuth";
 import ScrollToTop from "../../components/ScrollToTop";
+import { AnimatePresence } from "framer-motion";
+import AnimatedOutlet from "../../components/AnimatedOutlet";
 
 export default function ProtectedPageLayout() {
   const { user, isAuthenticated, pending } = useAuth();
+  const location = useLocation();
 
   if (pending) return null;
 
@@ -14,7 +17,7 @@ export default function ProtectedPageLayout() {
   return (
     <>
       <ScrollToTop />
-      <Outlet />
+      <AnimatedOutlet />
     </>
   );
 }
