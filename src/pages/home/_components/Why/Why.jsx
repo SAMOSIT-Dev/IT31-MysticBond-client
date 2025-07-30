@@ -16,7 +16,7 @@ export default function Why() {
         <div className='text-center pt-30 mb-15'>
           <h4 className='text-white text-3xl font-normal'>ทำไมถึงควรลงกิจกรรมนี้</h4>
         </div>
-        <div className='max-w-4xl mx-auto px-10 xl:max-w-[1400px]'>
+        <div className='max-w-4xl mx-auto px-10 xl:max-w-[1400px] lg:px-0'>
           <div className='grid grid-cols-1 gap-[25px] lg:grid-cols-3'>
             <ReasonCard>
               <div className='flex justify-between'>
