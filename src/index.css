@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Edensor";
+  src: url("./assets/fonts/Edensor-FREE.otf") format("woff2");
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("./assets/fonts/InriaSerif-Regular.ttf") format("woff2"),
+    url("./assets/fonts/InriaSerif-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "LINE Seed Sans";
+  src: url("./assets/fonts/LINESeedSansTH_W_Rg.woff2") format("woff2"),
+    url("./assets/fonts/LINESeedSansTH_W_Bd.woff2") format("woff2"),
+    url("./assets/fonts/LINESeedSansTH_W_Th.woff2") format("woff2");
+}
+
+@theme inline {
+  --default-font-family: "LINE Seed Sans";
+  --font-edensor: "Edensor", sans-serif;
+  --font-inria-serif: "Inria Serif", sans-serif;
+  --font-line-seed-sans: "LINE Seed Sans", sans-serif;
+}
+
+@utility signin-bg {
+  background: radial-gradient(
+    65.86% 32.18% at 50.07% 1.89%,
+    #252531 0%,
+    #1c1c23 50%,
+    #131315 100%
+  );
+}
+
+@utility glass-card {
+  border-radius: 24px;
+  border: 2px solid transparent;
+  background: radial-gradient(
+    156.35% 156.35% at 49.96% 50%,
+    rgba(24, 24, 24, 0.09) 0%,
+    rgba(104, 104, 104, 0.09) 100%
+  );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5.550000190734863px);
+}
+
+@utility noise-bg {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='1' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' fill='%24000' opacity='0.15'/></svg>");
+    background-repeat: repeat;
+    mix-blend-mode: multiply;
+  }
+
+@utility why-bg {
+  background: conic-gradient(from 270deg at 79.37% 2.56%, #000000 0deg, #131313 242.33deg, #252531 360deg);
+}
+
+@layer base {
+  body {
+    background-color: black;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+  }
+}

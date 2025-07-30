@@ -1,17 +1,24 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../libs/queryClient";
 import AuthProvider from "../hooks/useAuth";
-import { RouterProvider } from "react-router";
+import { RouterProvider, ScrollRestoration } from "react-router";
 import { router } from "../libs/router";
+import { Toaster } from "sonner";
+import ScrollToTop from "./ScrollToTop";
+import BackgroundMusic from "./BackgroundMusic";
+import LoaderScreen from "./LoaderScreen";
+import { useState } from "react";
 
 export default function Providers({ children }) {
+  const [showLoader, setShowLoader] = useState(true);
   return (
-    <RouterProvider router={router}>
+    <QueryClientProvider client={queryClient}>
+      <Toaster />
+      {showLoader && <LoaderScreen onComplete={() => setShowLoader(false)} />}
+      <BackgroundMusic />
       <AuthProvider>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <RouterProvider router={router}>{children}</RouterProvider>
       </AuthProvider>
-    </RouterProvider>
+    </QueryClientProvider>
   );
 }
