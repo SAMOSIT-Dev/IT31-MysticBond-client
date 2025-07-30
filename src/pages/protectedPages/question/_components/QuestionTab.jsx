@@ -9,6 +9,8 @@ import {
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "../../../../components/ui/Button";
 import { Profile } from "../../../../libs/api/profile.api";
+import AnimatedLayout from "../../../../components/AnimatedLayout";
+import { AnimatePresence } from "framer-motion";
 
 function QuestionContent({
   index = 0,
@@ -36,53 +38,57 @@ function QuestionContent({
   );
 
   return (
-    <div className="max-w-200 mx-auto">
-      <p>คำถามที่ {index + 1}</p>
-      <p className="text-white text-2xl md:text-4xl leading-normal md:leading-12 mt-4 font-bold">
-        {title}
-      </p>
-      <div className="space-y-4 mt-9 md:mt-14">
-        {choices.map((choice) => (
-          <button
-            key={choice}
-            data-selected={choice === selected}
-            className={cn(
-              "flex items-center space-x-3 px-3 py-3 bg-[#B7B7B770] rounded-xl w-full ease-in-out duration-400 outline-none transition-all",
-              "data-[selected=true]:bg-white data-[selected=true]:text-black group",
-              "focus:ring-4 ring-neutral-100/20",
-              "text-sm md:text-base text-start"
-            )}
-            onClick={() => handleOnSelected(choice)}
-          >
-            <div
-              className={cn(
-                "size-5 p-2 rounded-full flex items-center justify-center border-2 border-[#CDCDCD]",
-                "group-data-[selected=true]:border-[#7200FD] group-data-[selected=true]:bg-[#7200FD]"
-              )}
-            >
-              <i className="opacity-0 group-data-[selected=true]:opacity-100 text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="7"
-                  viewBox="0 0 10 7"
-                  fill="none"
+    <AnimatePresence mode="popLayout" initial>
+      <AnimatedLayout key={index} transition={{ ease: "linear", duration: 0.5}}>
+        <div className="max-w-200 mx-auto">
+          <p>คำถามที่ {index + 1}</p>
+          <p className="text-white text-2xl md:text-4xl leading-normal md:leading-12 mt-4 font-bold">
+            {title}
+          </p>
+          <div className="space-y-4 mt-9 md:mt-14">
+            {choices.map((choice) => (
+              <button
+                key={choice}
+                data-selected={choice === selected}
+                className={cn(
+                  "flex items-center space-x-3 px-3 py-3 bg-[#B7B7B770] rounded-xl w-full ease-in-out duration-400 outline-none transition-all",
+                  "data-[selected=true]:bg-white data-[selected=true]:text-black group",
+                  "focus:ring-4 ring-neutral-100/20",
+                  "text-sm md:text-base text-start"
+                )}
+                onClick={() => handleOnSelected(choice)}
+              >
+                <div
+                  className={cn(
+                    "size-5 p-2 rounded-full flex items-center justify-center border-2 border-[#CDCDCD]",
+                    "group-data-[selected=true]:border-[#7200FD] group-data-[selected=true]:bg-[#7200FD]"
+                  )}
                 >
-                  <path
-                    d="M9 1L3.5 6L1 3.72727"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </i>
-            </div>
-            <p className="">{choice}</p>
-          </button>
-        ))}
-      </div>
-    </div>
+                  <i className="opacity-0 group-data-[selected=true]:opacity-100 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="7"
+                      viewBox="0 0 10 7"
+                      fill="none"
+                    >
+                      <path
+                        d="M9 1L3.5 6L1 3.72727"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </i>
+                </div>
+                <p className="">{choice}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </AnimatedLayout>
+    </AnimatePresence>
   );
 }
 

@@ -4,23 +4,25 @@ import { cn, getFormDataValues } from "../../../libs/utils/utils";
 import CI_BANNER from "../../../assets/images/KMUTT+SIT.png";
 import SIGN_BG from "../../../assets/images/hero_bg.webp";
 import KMUTT_LOGO from "../../../assets/images/KMUTT_CI_Semi_Logo_normal-full.png";
-import MYSTIC_BOND_LOGO from "../../../assets/images/mysticbond_logo.png";
+import MYSTIC_BOND_LOGO from "../../../assets/images/the_code_of_mystic_bonds_logo.svg";
 
 import Button from "../../../components/ui/Button";
 import { useAuth } from "../../../hooks/useAuth";
 import { X } from "lucide-react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, redirect, useNavigate } from "react-router";
 import Checkbox from "../../../components/ui/Checkbox";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAuthenticated, logout } = useAuth();
 
-  if (isAuthenticated) {
-    return <Navigate to="/question" replace />;
-  }
+  useEffect(() => {
+    logout();
+  }, []);
 
-  const handleSubmit = (formData) => {
+  const handleSubmit = async (formData) => {
     const {
       studentId = "",
       password = "",
@@ -28,9 +30,12 @@ export default function LoginPage() {
     } = getFormDataValues(formData);
 
     try {
-      login(studentId, password);
+      const status = await login(studentId, password);
+      if (status?.success) {
+        return navigate("/question", { replace: true, viewTransition: true });
+      }
     } catch (error) {
-      alert(error.message);
+      toast.error(error?.message);
     }
   };
 

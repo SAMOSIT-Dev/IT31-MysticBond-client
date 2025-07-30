@@ -5,15 +5,19 @@ import { RouterProvider, ScrollRestoration } from "react-router";
 import { router } from "../libs/router";
 import { Toaster } from "sonner";
 import ScrollToTop from "./ScrollToTop";
+import BackgroundMusic from "./BackgroundMusic";
+import LoaderScreen from "./LoaderScreen";
+import { useState } from "react";
 
 export default function Providers({ children }) {
+  const [showLoader, setShowLoader] = useState(true);
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster />
+      {showLoader && <LoaderScreen onComplete={() => setShowLoader(false)} />}
+      <BackgroundMusic />
       <AuthProvider>
-        <RouterProvider router={router}>
-          {children}
-          </RouterProvider>
+        <RouterProvider router={router}>{children}</RouterProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

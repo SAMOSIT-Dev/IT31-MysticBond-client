@@ -23,29 +23,19 @@ export default function Hero() {
         <img
           src={logo}
           alt="The Code of Mystic Bonds Logo"
-          className="w-full"
+          className="w-full hidden lg:block"
         />
         <button
           className="lg:block hidden cursor-pointer lg:-mt-5 lg:text-2xl lg:px-20 lg:py-4 px-8 py-2 text-white text-md border-2 border-[#F4F4F440] shadow-[0_0_1rem] shadow-[#f4f4f449] bg-[radial-gradient(circle_at_top,_#000000,_#000000,_#262626,_#4F4F4F)] rounded-[44px] duration-300 hover:shadow-[0_0_1.5rem] hover:shadow-[#f4f4f480]"
           onClick={() =>
-            navigate(isAuthenticated ? "/question" : "/auth/login")
+            navigate(isAuthenticated ? "/question" : "/auth/login", {
+              viewTransition: true,
+            })
           }
         >
           {isAuthenticated ? "เริ่มคัดสรร" : "เข้าสู่ระบบ"}
         </button>
       </div>
-
-      {/* Sponsors */}
-      {/* <div className='relative mb-[8rem] lg:mb-0 lg:bottom-[3rem] text-[#AAA] flex flex-col w-full lg:absolute'>
-        <p className='lg:text-xl text-md text-center mb-5' style={{fontFamily: 'Inria Serif, serif' }}>Sponsored by</p>
-        <ul className='lg:text-2xl text-xl flex items-center justify-center flex-row relative'>
-          <li className='w-[200px] text-center'>Sponsor</li>
-          <hr className='w-[1px] h-[40px] bg-[#B4B4B4] text-transparent' />
-          <li className='w-[200px] text-center'>Sponsor</li>
-          <hr className='w-[1px] h-[40px] bg-[#B4B4B4] text-transparent' />
-          <li className='w-[200px] text-center'>Sponsor</li>
-        </ul>
-      </div> */}
     </section>
   );
 }

@@ -57,7 +57,9 @@ export default function NavBar({ isRootPage = false }) {
         <button
           className="lg:flex hidden cursor-pointer bg-white px-12 py-3 rounded-full font-bold duration-300 hover:shadow-[0_0_1.5rem] hover:shadow-[#f4f4f480]"
           onClick={() =>
-            navigate(isAuthenticated ? "/question" : "/auth/login")
+            navigate(isAuthenticated ? "/question" : "/auth/login", {
+              viewTransition: true,
+            })
           }
         >
           {isAuthenticated ? "เริ่มคัดสรร" : "เข้าสู่ระบบ"}
@@ -73,7 +75,9 @@ export default function NavBar({ isRootPage = false }) {
           <span className="px-8 py-3">{currentSectionText}</span>
           <button
             onClick={() =>
-              navigate(isAuthenticated ? "/question" : "/auth/login")
+              navigate(isAuthenticated ? "/question" : "/auth/login", {
+                viewTransition: true,
+              })
             }
             className="cursor-pointer px-8 py-3 text-md border-2 border-[#202020] shadow-[0_0_1rem] shadow-[#f4f4f449] bg-[radial-gradient(circle_at_top,_#000000,_#000000,_#262626,_#4F4F4F)] rounded-[44px] duration-300 hover:shadow-[0_0_1.5rem] hover:shadow-[#f4f4f480]"
           >

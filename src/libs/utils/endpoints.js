@@ -3,6 +3,7 @@ export const endpoint = {
     api: {
         login: "/samosit/it31-mysticbond/auth/login",
         userProfile: "/samosit/it31-mysticbond/users",
-        refreshToken: "/samosit/it31-mysticbond/auth/refresh"
+        refreshToken: "/samosit/it31-mysticbond/auth/refresh",
+        getHints: "/samosit/it31-mysticbond/hints"
     }
 }
