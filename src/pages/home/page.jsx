@@ -3,7 +3,6 @@ import House from "./_components/house";
 import About from "./_components/about";
 import AnimatedLayout from "../../components/AnimatedLayout";
 import Why from "./_components/Why/Why";
-import AnimatedLayout from "../../components/AnimatedLayout";
 
 export default function HomePage() {
   return (
