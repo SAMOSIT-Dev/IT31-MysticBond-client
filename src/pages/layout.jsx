@@ -7,7 +7,7 @@ export default function RootLayout() {
   return (
     <>
       <ScrollToHash />
-      {/* <NavBar isRootPage /> */}
+      <NavBar isRootPage /> 
       <main>
         <Outlet />
       </main>
