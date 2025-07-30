@@ -1,7 +1,9 @@
 import Hero from "./_components/hero";
+import House from "./_components/house";
 import About from "./_components/about";
 import AnimatedLayout from "../../components/AnimatedLayout";
 import Why from "./_components/Why/Why";
+import AnimatedLayout from "../../components/AnimatedLayout";
 
 export default function HomePage() {
   return (
@@ -12,15 +14,8 @@ export default function HomePage() {
       <section id="about">
         <About />
       </section>
-      <section id="houses" className="min-h-screen bg-gray-800 p-8">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-8">บ้าน</h2>
-        </div>
-      </section>
-      <section id="timeline" className="min-h-screen bg-gray-700 p-8">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-8">กำหนดการ</h2>
-        </div>
+      <section id="houses">
+         <House />
       </section>
       <section id="why">
         <Why/>
