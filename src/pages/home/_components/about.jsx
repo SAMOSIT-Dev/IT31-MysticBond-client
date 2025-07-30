@@ -8,7 +8,7 @@ export default function About() {
       <div
         style={{
           backgroundImage: `
-                radial-gradient(rgba(102,102,102,0) 0%, rgba(102,102,102,0.2) 50%, rgba(0,0,0,0.90) 90%),
+                radial-gradient(69.1% 50% at 50% 50%, rgba(102, 102, 102, 0.00) 0%, rgba(0, 0, 0, 0.75) 100%),
                 url(${about_bg})
             `,
         }}
@@ -23,7 +23,7 @@ export default function About() {
             ></img>
             <h1
               style={{ fontFamily: "'Inria Serif'" }}
-              className="text-[32px] lg:text-[40px] mb-4"
+              className="text-2xl lg:text-[40px] mb-4"
             >
               What is The Code of the Mystic Bonds
             </h1>
@@ -34,13 +34,13 @@ export default function About() {
             ></img>
           </div>
           <img
-            className="lg:hidden md:w-[50%] justify-self-center"
+            className="lg:hidden md:w-[50%] justify-self-center mx-auto"
             src={about_arrow}
             alt="arrow"
           ></img>
           <p
             style={{ fontFamily: "'LINE Seed Sans', sans-serif" }}
-            className="font-normal text-[15px] lg:text-[32px] lg:w-[80%] pt-4 justify-self-center"
+            className="font-normal text-[15px] lg:text-[32px] px-5 lg:w-[80%] pt-4 justify-self-center"
           >
             นี่ไม่ใช่แค่การรับน้อง แต่มันคือการเข้าสู่พันธสัญญาแห่งตำนาน
             ที่ไม่มีวันนับถอยหลัง คืนนี้ ดวงจันทร์จะเปิดทาง

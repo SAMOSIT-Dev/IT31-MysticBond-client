@@ -28,7 +28,7 @@ export default function House() {
   const swiperRef = useRef(null);
 
   return (
-    <section className="bg-black relative  pt-20 pb-40 overflow-hidden flex flex-col">
+    <section className="bg-black relative pt-20 pb-40 overflow-hidden flex flex-col">
       {/* ขอบดำ - Gradient Overlays */}
       <div className="pointer-events-none absolute inset-0 z-20">
         <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r lg:from-black lg:via-black/70 lg:to-transparent" />
@@ -36,11 +36,11 @@ export default function House() {
       </div>
 
       {/* Header */}
-      <div className="text-white text-center relative z-10 flex flex-col items-center mb-8 px-20 ">
-        <h1 className="font-inria-serif font-bold text-6xl  xl:text-7xl mb-4 tracking-wider">
+      <div className="text-white text-center relative z-10 flex flex-col items-center mb-8 px-5 md:px-20">
+        <h1 className="font-inria-serif font-bold text-6xl xl:text-7xl mb-5 tracking-wider">
           Houses
         </h1>
-        <p className="text-base lg:text-xl xl:text-2xl font-light  leading-relaxed px-4">
+        <p className="text-base lg:text-xl xl:text-2xl font-light leading-relaxed px-4">
           สัมผัสกับพลังแห่งเวทมนตร์ที่ซ่อนอยู่ในตัวเรา ที่รอให้น้อง ๆ ค้นพบตัวตน
           และบทบาทที่แท้จริงในโลกใบใหม่นี้ ผ่านพลังของสัตว์ในตำนานทั้ง 6 ตน
         </p>
