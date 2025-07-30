@@ -56,9 +56,12 @@ export default function AuthProvider({ children }) {
 
         setUser(userData);
         setIsAuthenticated(true);
+
+        return { success: true };
       } else {
         logout();
       }
+      return { success: false };
     } catch (error) {
       console.error("Login failed", error);
       toast.error("Authentication Failed", error.message);
@@ -112,7 +115,7 @@ export default function AuthProvider({ children }) {
     const cookieUser = Cookies.get("auth");
     if (cookieUser) {
       try {
-        const parsedUser = JSON.parse(cookieUser)
+        const parsedUser = JSON.parse(cookieUser);
         setUser(parsedUser);
         setIsAuthenticated(true);
       } catch (e) {
