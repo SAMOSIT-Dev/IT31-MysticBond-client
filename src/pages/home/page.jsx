@@ -1,5 +1,6 @@
 import Hero from "./_components/hero";
 import About from "./_components/about";
+import Why from "./_components/Why/Why";
 
 export default function HomePage() {
   return (
@@ -20,10 +21,8 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold mb-8">กำหนดการ</h2>
         </div>
       </section>
-      <section id="why" className="min-h-screen bg-gray-600 p-8">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-8">คำถามที่พบบ่อย</h2>
-        </div>
+      <section id="why">
+        <Why/>
       </section>
 
     </div>
