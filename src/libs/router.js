@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from "react-router";
+import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../pages/layout";
 import AuthLayout from "../pages/auth/layout";

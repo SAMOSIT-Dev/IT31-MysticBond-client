@@ -10,9 +10,7 @@ export const Profile = {
         return useQuery({
             queryKey: ["profile", token],
             queryFn: () =>
-                request.get(endpoint.api.userProfile, {
-                    headers: { Authorization: `Bearer ${token.ACCESS_TOKEN}` }
-                }),
+                request.get(endpoint.api.userProfile),
             placeholderData: keepPreviousData,
             initialData,
             enabled: !!token,
@@ -22,9 +20,7 @@ export const Profile = {
         const token = getSession()
         return useMutation({
             mutationFn: (params) =>
-                request.put(endpoint.api.userProfile, params, {
-                    headers: { Authorization: `Bearer ${token.ACCESS_TOKEN}` }
-                }),
+                request.put(endpoint.api.userProfile, params),
             onSuccess: () => {
                 queryClient.invalidateQueries({ queryKey: ["profile"] })
             },
