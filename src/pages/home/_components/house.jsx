@@ -13,6 +13,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import RevealOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
 
 const houses = [
   { name: "Phoenix", shield_src: shield, mascot_src: Phoenix },
@@ -40,10 +41,13 @@ export default function House() {
         <h1 className="font-inria-serif font-bold text-6xl xl:text-7xl mb-5 tracking-wider">
           Houses
         </h1>
-        <p className="text-base lg:text-xl xl:text-2xl font-light leading-relaxed px-4">
-          สัมผัสกับพลังแห่งเวทมนตร์ที่ซ่อนอยู่ในตัวเรา ที่รอให้น้อง ๆ ค้นพบตัวตน
-          และบทบาทที่แท้จริงในโลกใบใหม่นี้ ผ่านพลังของสัตว์ในตำนานทั้ง 6 ตน
-        </p>
+        <RevealOnScrollAnimation>
+          <p className="text-base lg:text-xl xl:text-2xl font-light leading-relaxed px-4">
+            สัมผัสกับพลังแห่งเวทมนตร์ที่ซ่อนอยู่ในตัวเรา ที่รอให้น้อง ๆ
+            ค้นพบตัวตน และบทบาทที่แท้จริงในโลกใบใหม่นี้
+            ผ่านพลังของสัตว์ในตำนานทั้ง 6 ตน
+          </p>
+        </RevealOnScrollAnimation>
       </div>
 
       {/* House Container Dekstop */}

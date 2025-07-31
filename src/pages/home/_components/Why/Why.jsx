@@ -5,6 +5,7 @@ import icon2 from "/src/assets/icon/icon2.png";
 import icon3 from "/src/assets/icon/icon3.png";
 
 import ReasonCard from "./ReasonCard";
+import RevealOnScrollAnimation from "../../../../components/RevealOnScrollAnimation";
 
 export default function Why() {
   return (
@@ -17,7 +18,7 @@ export default function Why() {
           </h4>
         </div>
         <div className="max-w-4xl mx-auto px-7 md:px-10 xl:max-w-[1400px] lg:px-0">
-          <div className="grid grid-cols-1 gap-[25px] lg:grid-cols-2 xl:grid-cols-3">
+          <RevealOnScrollAnimation className="grid grid-cols-1 gap-[25px] lg:grid-cols-2 xl:grid-cols-3">
             <ReasonCard>
               <div className="flex justify-between">
                 <div className="w-34 h-31.5 mb-5 mt-11 relative">
@@ -64,7 +65,7 @@ export default function Why() {
                 </p>
               </div>
             </ReasonCard>
-          </div>
+          </RevealOnScrollAnimation>
         </div>
       </div>
       <div className="why-bg w-[51vw] h-full absolute right-0 top-0 z-[-1]"></div>
