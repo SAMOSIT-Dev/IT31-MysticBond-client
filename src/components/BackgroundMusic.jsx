@@ -40,9 +40,9 @@ export default function BackgroundMusic() {
         onClick={toggleMute}
       >
         {isMuted ? (
-          <Music2 className="size-full" />
-        ) : (
           <VolumeX className="size-full" />
+        ) : (
+          <Music2 className="size-full" />
         )}
       </button>
     </div>
