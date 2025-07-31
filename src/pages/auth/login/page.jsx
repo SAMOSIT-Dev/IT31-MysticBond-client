@@ -13,6 +13,7 @@ import { Navigate, redirect, useNavigate } from "react-router";
 import Checkbox from "../../../components/ui/Checkbox";
 import { useEffect } from "react";
 import { toast } from "sonner";
+import { preload } from "react-dom";
 
 export default function LoginPage() {
   const navigate = useNavigate();
