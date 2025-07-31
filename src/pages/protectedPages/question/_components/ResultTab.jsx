@@ -10,6 +10,8 @@ import { preload } from "react-dom";
 export default function ResultTab({ houseData = {}, isLoading = true }) {
   const { value } = useStep();
   const navigate = useNavigate();
+  
+  preload(BOOK_PROP, { as: "image" })
 
   preload(BOOK_PROP, { as: "image" })
 
