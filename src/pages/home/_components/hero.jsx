@@ -8,6 +8,7 @@ import RevealOnScrollAnimation from "../../../components/RevealOnScrollAnimation
 export default function Hero() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
+  preload(hero_bg, { as: "image" })
 
   return (
     <section className="justify-end flex flex-col items-center lg:justify-center w-full min-h-[768px] h-screen relative ">

@@ -11,6 +11,7 @@ import { useLoaderData } from "react-router";
 import NavBar from "../../../components/NavBar";
 import Loading from "../../../components/Loading";
 import AnimatedLayout from "../../../components/AnimatedLayout";
+import { preload } from "react-dom";
 
 export default function QuestionPage() {
   const { data: initalData = {} } = useLoaderData() || { data: {} };
@@ -19,6 +20,8 @@ export default function QuestionPage() {
   const getHouseData = useMemo(() => {
     const profile = data?.data?.data;
     const house = profile?.user?.house?.houseName;
+
+    preload(`/assets/${(house ?? "").toLowerCase()}.webp`, { as: "image" })
 
     return {
       title: house,
@@ -56,6 +59,8 @@ export default function QuestionPage() {
     ],
     []
   );
+
+  preload(BG, { as: "image" })
 
   return (
     <AnimatedLayout>
