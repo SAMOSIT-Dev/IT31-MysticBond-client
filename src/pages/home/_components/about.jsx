@@ -2,10 +2,9 @@ import about_bg from "../../../assets/images/about_bg.png";
 import about_arrow from "../../../assets/images/about_arrow.png";
 import about_arrow_dekstop_left from "../../../assets/images/about_arrow_dekstop_left.png";
 import about_arrow_dekstop_right from "../../../assets/images/about_arrow_dekstop_right.png";
-import RevalOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
-
 export default function About() {
-   preload(about_bg, { as: "image" })
+  preload(about_bg, { as: "image" })
+  
   return (
     <section>
       <div

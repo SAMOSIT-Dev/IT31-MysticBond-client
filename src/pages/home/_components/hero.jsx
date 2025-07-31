@@ -4,10 +4,12 @@ import hero_bg from "../../../assets/images/hero_bg.webp";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
 import RevealOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
+import { preload } from "react-dom";
 
 export default function Hero() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
+  
   preload(hero_bg, { as: "image" })
 
   return (
