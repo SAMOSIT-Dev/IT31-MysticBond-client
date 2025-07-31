@@ -3,6 +3,7 @@ import hero_bg from "../../../assets/images/hero_bg.webp";
 
 import { useNavigate } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
+import RevealOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Hero() {
         <span className="absolute bottom-0 w-full h-1/2 lg:h-4/5 bg-gradient-to-b from-transparent via-black to-black lg:opacity-50" />
       </div>
 
-      <div className="relative z-1 flex items-center justify-center flex-col space-y-5">
+      <RevealOnScrollAnimation className="relative z-1 flex items-center justify-center flex-col space-y-5">
         <img
           src={logo}
           alt="The Code of Mystic Bonds Logo"
@@ -35,7 +36,7 @@ export default function Hero() {
         >
           {isAuthenticated ? "เริ่มคัดสรร" : "เข้าสู่ระบบ"}
         </button>
-      </div>
+      </RevealOnScrollAnimation>
     </section>
   );
 }
