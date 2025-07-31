@@ -8,11 +8,7 @@ export const Hint = {
         const token = getSession()
         return useQuery({
             queryKey: ["userHint", token.ACCESS_TOKEN],
-            queryFn: () => request.get(endpoint.api.getHints, {
-                headers: {
-                    Authorization: `Bearer ${token.ACCESS_TOKEN}`
-                }
-            }),
+            queryFn: () => request.get(endpoint.api.getHints),
             initialData,
             placeholderData: keepPreviousData,
             enabled: !!token.ACCESS_TOKEN
