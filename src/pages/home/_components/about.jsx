@@ -3,6 +3,7 @@ import about_arrow from "../../../assets/images/about_arrow.png";
 import about_arrow_dekstop_left from "../../../assets/images/about_arrow_dekstop_left.png";
 import about_arrow_dekstop_right from "../../../assets/images/about_arrow_dekstop_right.png";
 import { preload } from "react-dom";
+import RevealOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
 
 export default function About() {
   preload(about_bg, { as: "image" })
@@ -42,7 +43,7 @@ export default function About() {
             src={about_arrow}
             alt="arrow"
           ></img>
-          <RevalOnScrollAnimation>
+          <RevealOnScrollAnimation>
             <p
               style={{ fontFamily: "'LINE Seed Sans', sans-serif" }}
               className="font-normal text-[15px] lg:text-[32px] px-5 lg:w-[80%] pt-4 justify-self-center mx-auto"
@@ -55,7 +56,7 @@ export default function About() {
               พิธีศักดิ์สิทธิ์จะเริ่มต้น เส้นทางที่เจ้าจะเลือกในคืนนี้
               จักสืบทอดไปถึงเจ็ดชั่วอายุเวทมนตร์
             </p>
-          </RevalOnScrollAnimation>
+          </RevealOnScrollAnimation>
         </div>
       </div>
     </section>
