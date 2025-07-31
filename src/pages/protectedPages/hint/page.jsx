@@ -13,6 +13,7 @@ import {
 import { useMemo } from "react";
 import { Hint } from "../../../libs/api/hint.api";
 import { useLoaderData } from "react-router";
+import { preload } from "react-dom";
 
 const defaultStepValues = [
   {
@@ -57,6 +58,9 @@ export default function HintPage() {
     });
     return formatted;
   }, [data]);
+
+  preload(BG, { as: "image" })
+  preload(BOOK_PROP, { as: "image" })
 
   return (
     <div

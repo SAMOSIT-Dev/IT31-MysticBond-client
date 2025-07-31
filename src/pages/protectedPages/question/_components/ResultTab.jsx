@@ -9,6 +9,8 @@ import { useNavigate } from "react-router";
 export default function ResultTab({ houseData = {}, isLoading = true }) {
   const { value } = useStep();
   const navigate = useNavigate();
+  
+  preload(BOOK_PROP, { as: "image" })
 
   return (
     <AnimatedLayout key={value}>

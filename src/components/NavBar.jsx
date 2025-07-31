@@ -50,7 +50,7 @@ export default function NavBar({ isRootPage = false }) {
             to={{ pathname: "/", hash: "#why" }}
             className="hover:text-gray-300 hover:underline transition-colors"
           >
-            คำถามที่พบบ่อย
+            ทำไมถึงควรเลือก
           </Link>
         </div>
 

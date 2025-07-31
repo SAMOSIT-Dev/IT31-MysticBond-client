@@ -39,6 +39,11 @@ export default function LoginPage() {
     }
   };
 
+  preload(SIGN_BG, { as: "image" })
+  preload(MYSTIC_BOND_LOGO, { as: "image" })
+  preload(KMUTT_LOGO, { as: "image" })
+  preload(CI_BANNER, { as: "image" })
+
   return (
     <div className="grid grid-cols-2 h-full min-h-0 overflow-y-auto text-white gap-4">
       <div className="h-full rounded-2xl overflow-hidden relative max-lg:hidden">
