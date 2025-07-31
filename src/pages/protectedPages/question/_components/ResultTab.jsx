@@ -5,11 +5,12 @@ import Button from "../../../../components/ui/Button";
 import Loading from "../../../../components/Loading";
 import AnimatedLayout from "../../../../components/AnimatedLayout";
 import { useNavigate } from "react-router";
+import { preload } from "react-dom";
 
 export default function ResultTab({ houseData = {}, isLoading = true }) {
   const { value } = useStep();
   const navigate = useNavigate();
-  
+
   preload(BOOK_PROP, { as: "image" })
 
   return (

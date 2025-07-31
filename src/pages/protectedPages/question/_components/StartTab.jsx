@@ -7,6 +7,7 @@ import { preload } from "react-dom";
 export default function StartTab() {
   const { setValue, updateStepItemState } = useStep();
   preload(SHIELD, { as: "image" })
+  
   return (
     <StepTabContent value="start">
       <div className="flex flex-col">
