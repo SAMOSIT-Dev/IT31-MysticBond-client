@@ -2,6 +2,8 @@ import about_bg from "../../../assets/images/about_bg.png";
 import about_arrow from "../../../assets/images/about_arrow.png";
 import about_arrow_dekstop_left from "../../../assets/images/about_arrow_dekstop_left.png";
 import about_arrow_dekstop_right from "../../../assets/images/about_arrow_dekstop_right.png";
+import RevalOnScrollAnimation from "../../../components/RevealOnScrollAnimation";
+
 export default function About() {
   return (
     <section>
@@ -38,18 +40,20 @@ export default function About() {
             src={about_arrow}
             alt="arrow"
           ></img>
-          <p
-            style={{ fontFamily: "'LINE Seed Sans', sans-serif" }}
-            className="font-normal text-[15px] lg:text-[32px] px-5 lg:w-[80%] pt-4 justify-self-center"
-          >
-            นี่ไม่ใช่แค่การรับน้อง แต่มันคือการเข้าสู่พันธสัญญาแห่งตำนาน
-            ที่ไม่มีวันนับถอยหลัง คืนนี้ ดวงจันทร์จะเปิดทาง
-            สู่วิถีของผู้ถูกเลือก เถ้าธุลีจากอดีตกำลังฟื้นชีพ
-            และพลังเวทที่หลับใหลจะไหลเวียนอีกครั้ง ใต้เงาแห่งพฤกษาโบราณ
-            พวกเจ้าจะผนึกพันธะร่วมกับเหล่าสัตว์ผู้พิทักษ์ เมื่อบทสวดถูกขับขาน
-            พิธีศักดิ์สิทธิ์จะเริ่มต้น เส้นทางที่เจ้าจะเลือกในคืนนี้
-            จักสืบทอดไปถึงเจ็ดชั่วอายุเวทมนตร์
-          </p>
+          <RevalOnScrollAnimation>
+            <p
+              style={{ fontFamily: "'LINE Seed Sans', sans-serif" }}
+              className="font-normal text-[15px] lg:text-[32px] px-5 lg:w-[80%] pt-4 justify-self-center mx-auto"
+            >
+              นี่ไม่ใช่แค่การรับน้อง แต่มันคือการเข้าสู่พันธสัญญาแห่งตำนาน
+              ที่ไม่มีวันนับถอยหลัง คืนนี้ ดวงจันทร์จะเปิดทาง
+              สู่วิถีของผู้ถูกเลือก เถ้าธุลีจากอดีตกำลังฟื้นชีพ
+              และพลังเวทที่หลับใหลจะไหลเวียนอีกครั้ง ใต้เงาแห่งพฤกษาโบราณ
+              พวกเจ้าจะผนึกพันธะร่วมกับเหล่าสัตว์ผู้พิทักษ์ เมื่อบทสวดถูกขับขาน
+              พิธีศักดิ์สิทธิ์จะเริ่มต้น เส้นทางที่เจ้าจะเลือกในคืนนี้
+              จักสืบทอดไปถึงเจ็ดชั่วอายุเวทมนตร์
+            </p>
+          </RevalOnScrollAnimation>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ const sectionTextMap = {
   hero: "หนัาหลัก",
   about: "เกี่ยวกับกิจกรรม",
   houses: "บ้าน",
-  why: "คำถามที่พบบ่อย",
+  why: "ทำไมถึงควรเลือก",
 };
 
 export default function NavBar({ isRootPage = false }) {
