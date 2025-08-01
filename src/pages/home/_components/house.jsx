@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import shield from "../../../assets/images/house_shield.png";
+import shield from "../../../assets/images/house_shield.svg";
 import Basilisk from "../../../assets/images/Basilisk.png";
 import Giffin from "../../../assets/images/Giffin.png";
 import Kitsune from "../../../assets/images/Kitsune.png";
@@ -37,7 +37,7 @@ export default function House() {
       </div>
 
       {/* Header */}
-      <div className="text-white text-center relative z-10 flex flex-col items-center mb-8 px-5 md:px-20">
+      <div className="text-white md:w-[60%] justify-self-center self-center text-center relative z-10 flex flex-col items-center mb-8 px-5 md:px-20 md:pt-30">
         <h1 className="font-inria-serif font-bold text-6xl xl:text-7xl mb-5 tracking-wider">
           Houses
         </h1>
@@ -81,7 +81,7 @@ export default function House() {
       </div>
 
       {/* House Carousel Container mobile */}
-      <div className="md:hidden flex items-center justify-center relative z-10 pt-20">
+      <div className="md:hidden flex items-center justify-center relative z-10 ">
         <div className="w-full max-w-7xl mx-auto px-4">
           <Swiper
             effect={"coverflow"}
