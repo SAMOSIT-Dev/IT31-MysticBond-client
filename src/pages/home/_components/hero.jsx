@@ -17,7 +17,7 @@ export default function Hero() {
       {/* Background Decoration */}
       <div className="absolute flex flex-col w-full h-full">
         <div
-          style={{ backgroundImage: `url(${hero_bg})` }}
+          style={{ backgroundImage: `linear-gradient(to bottom, transparent 70%, black) ,url(${hero_bg})` }}
           className={`z-0 lg:h-full absolute w-full h-3/4 bg-cover bg-center`}
         />
         <span className="absolute bottom-0 w-full h-1/2 lg:h-4/5 bg-gradient-to-b from-transparent via-black to-black lg:opacity-50" />
