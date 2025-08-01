@@ -13,7 +13,7 @@ export default function About() {
       <div
         style={{
           backgroundImage: `
-                radial-gradient(69.1% 50% at 50% 50%, rgba(102, 102, 102, 0.00) 0%, rgba(0, 0, 0, 0.75) 100%),
+                radial-gradient(90% 50% at 50% 50%, rgba(102, 102, 102, 0.00) 0%, rgba(0, 0, 0, 1) 100%),
                 url(${about_bg})
             `,
         }}
@@ -46,7 +46,7 @@ export default function About() {
           <RevealOnScrollAnimation>
             <p
               style={{ fontFamily: "'LINE Seed Sans', sans-serif" }}
-              className="font-normal text-[15px] lg:text-[32px] px-5 lg:w-[80%] pt-4 justify-self-center mx-auto"
+              className="font-normal text-[15px] lg:text-[25px] px-5 md:w-[80%] pt-4 justify-self-center mx-auto"
             >
               นี่ไม่ใช่แค่การรับน้อง แต่มันคือการเข้าสู่พันธสัญญาแห่งตำนาน
               ที่ไม่มีวันนับถอยหลัง คืนนี้ ดวงจันทร์จะเปิดทาง
