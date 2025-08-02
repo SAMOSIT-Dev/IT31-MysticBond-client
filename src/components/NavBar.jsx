@@ -3,6 +3,7 @@ import LOGO from "../assets/images/the_code_of_mystic_bonds_logo.svg";
 import { Link, useNavigate } from "react-router";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { useAuth } from "../hooks/useAuth";
+import { useState, useEffect } from "react";
 
 // Mock
 const sectionTextMap = {
@@ -16,13 +17,34 @@ export default function NavBar({ isRootPage = false }) {
   const navigate = useNavigate();
   const activeSection = useActiveSection();
   const { isAuthenticated } = useAuth();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const currentSectionText = sectionTextMap[activeSection] || "หน้าหลัก";
 
   return (
     <>
       <nav
-        className="z-50 h-[73px] w-full fixed top-1/12 px-[9%] inset-0 flex items-center justify-center lg:justify-between"
+        className={`z-50 h-[73px] w-full fixed top-1/12 px-[9%] inset-0 flex items-center justify-center lg:justify-between transition-all duration-300 ${
+          isVisible ? "" : "opacity-0"
+        }`}
         style={{ top: "min(6%, 85px)" }}
       >
         <Link to="/" className="h-full">
@@ -67,7 +89,7 @@ export default function NavBar({ isRootPage = false }) {
       </nav>
       {isRootPage && (
         <nav
-          className="lg:hidden z-50 fixed left-1/2 -translate-x-1/2 h-14 flex w-max items-center justify-center rounded-full text-white border-2 border-white/10 backdrop-blur-sm"
+          className={`lg:hidden z-50 fixed left-1/2 -translate-x-1/2 h-14 flex w-max items-center justify-center rounded-full text-white border-2 border-white/10 backdrop-blur-sm transition-transform duration-300`}
           style={{
             bottom: "min(6%, 85px)",
           }}
