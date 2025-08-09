@@ -84,7 +84,7 @@ export default function HintPage() {
                 {hints.length > 0 ? (
                   hints.map((hint, i) => (
                     <StepTabContent key={hint} value={String(i + 1)}>
-                      <div className="text-center max-w-130">
+                      <div className="text-center max-w-130 w-full">
                         <p className="text-xl text-[#828282]">
                           คำใบชิ้นที่ {i + 1}
                         </p>
