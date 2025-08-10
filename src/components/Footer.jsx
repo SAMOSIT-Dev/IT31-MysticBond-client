@@ -4,7 +4,7 @@ import MBLogo from '../assets/images/mysticbond_logo.png'
 import IG from '../assets/icon/IG.png'
 import DC from '../assets/icon/DC.png'
 
-const DCLink = ''
+const DCLink = 'https://discord.com/'
 
 export default function Footer() {
   return (
