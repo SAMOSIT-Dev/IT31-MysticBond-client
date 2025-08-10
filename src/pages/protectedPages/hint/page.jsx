@@ -59,8 +59,8 @@ export default function HintPage() {
     return formatted;
   }, [data]);
 
-  preload(BG, { as: "image" })
-  preload(BOOK_PROP, { as: "image" })
+  preload(BG, { as: "image" });
+  preload(BOOK_PROP, { as: "image" });
 
   return (
     <div
@@ -76,7 +76,7 @@ export default function HintPage() {
       <div className="m-auto max-w-300 h-max w-full p-5 py-15 max-md:p-7 flex flex-col text-white border-white/10 glass-card">
         <div className="text-center">
           <StepProvider
-            defaultValue={hasHints ? String(hints.length + 1) : ""}
+            defaultValue={hasHints ? String(hints.length) : ""}
             defaultValueOfStepItems={getStepItems}
           >
             <Step className="flex flex-col" activationMode="manual">
